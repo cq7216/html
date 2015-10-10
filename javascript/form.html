@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+Name：Html5模板
+Date：2014-11-12
+Author：cq7216
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>form表单知识点</title>
+        <link media="all" rel="stylesheet" href="../css/reset.css" type="text/css" />
+        <link type="text/css" rel="stylesheet" href="../css/text.css" />
+        <link rel="stylesheet" href="../css/viki.css">
+        <style type="text/css">
+        <!--
+        #zhuce{border: 1px solid #eee;width:500px;padding:10px 20px;}
+        #zhuce label{display: block;margin:10px 0;}
+        -->
+        </style>
+    </head>
+    <script language="javascript">
+    <!--
+        function clickme(x){
+            alert(x);    //document.getElementById("id名称").value函数从id中获取想要的信息
+        }
+        // window.onload=function(){
+        //  // alert("你好");
+        //  document.write("hello");
+        // }
+    -->
+    </script>
+    <body>
+    <!-- 固定头部 -->
+        <iframe src="../header.html" frameborder="0" width="100%" height="55px"></iframe>
+    <!-- 内容开始 -->
+        <div class="main w1220">
+            <br>
+            <center style="font-family: 'Microsoft Yahei', sans-serif; font-size: 1.80em; 
+                font-weight: normal; color: #FF6600">form表单知识点</center>
+            <!-- 知识点 -->
+            <h3>1、表单标签组</h3>
+            那么，表单该怎么用HTML标签呢？是用<code>form</code>
+<xmp><form name="ff"  id="zhuce"  method="POST"  action="data.php" >
+</form></xmp>
+在表单FORM中，将包含下列几种子标签：<br>
+<ul>
+    <li><code>文本框</code> <xmp><input type="text" id="email"  value="姓名" /></xmp></li>
+    <li><code>按  钮</code> <xmp><input type="button" id="anniu" value="点我" /></xmp></li>
+    <li><code>提  交</code> <xmp><input type="submit" id="tijiao" value="注册" /></xmp></li>
+    <li><code>重  置</code> <xmp><input type="reset" id="start" value="重置" /></xmp></li>
+    <li><code>单选按钮：</code>
+<xmp><input type="radio" name="danxuan"  value="male" />男人
+<input type="radio" name="danxuan" value="female" />女人
+<input type="radio"  name="danxuan" value="secret" />保密</xmp></li>
+    <li><code>多选按钮：（也叫复选按钮）</code>
+<xmp><input type="checkbox" name="tc" value="read" />阅读
+<input type="checkbox" name="tc" value="play" />体育
+<input type="checkbox" name="tc" value="chat" />聊天</xmp></li>
+    <li><code>菜单：</code>
+<xmp><select  name="kecheng"  id="lesson" >
+  <option>历史</option>
+<option>地理</option>
+<option>数学</option>
+</select></xmp>
+</li>
+    <li><code>文本区域：</code><xmp><textarea  name="neirong"  id="content" >
+这里输入的文字显示在文本区域内容
+</textarea></xmp></li>
+    <li></li>
+</ul>
+            <h3>2、JS与表单或表单组标签的交互</h3>
+<p><code>document.write(“内容");</code> //输出内容</p>
+<p>回顾JS函数的定义方法：</p>
+<xmp>function 函数名(这里写参数，可不设定，多个用逗号隔开){
+    //中间写函数的执行程序
+    /*多行注释，中间不运行*/
+    var x=10;
+}</xmp>
+<p>JS中的函数如果不调用，它不会执行。必须由网页事件行为驱动才可以。</p>
+<p>常见的网页事件行为包括：</p>
+<ul>
+    <li>1、  单击：<code>click</code></li>
+    <li>2、  双击：<code>dblclick</code></li>
+    <li>3、  鼠标放上去：<code>mouseover</code></li>
+    <li>4、  鼠标放下来：<code>mouseout</code></li>
+    <li>5、  开始敲击键盘：<code>keydown</code></li>
+    <li>6、  键盘抬起时：<code>keyup</code></li>
+    <li>……</li>
+</ul>
+
+<p><code>on+事件行为</code>代码来驱动函数程序运行。</p>
+【举例】
+<xmp><script language="javascript">
+<!—
+    function  clickme(){
+    alert("哈喽，你好啊！");
+}
+-->
+</script>
+……
+<input  type="button"  id="cat"  onclick="clickme()">
+</xmp>
+<p>Clickme()函数中的参数可变换设定，但一旦设定将必须按结构调用。</p>
+<xmp>Clickme(x,y,a)  clickme(1,5,3)</xmp>
+<p>函数从id中获取想要的信息。</p>
+<code>document.getElementById(“id名称").value</code>
+<p>如果用到form，就以name设定的名称，使用form.name.value</p>
+        <h3>3、举例应用</h3>
+        <p>源代码：</p>
+            <xmp><head>...</head>
+<script language="javascript">
+    <!--
+        function clickme(x){
+            alert(x);    //document.getElementById("id名称").value函数从id中获取想要的信息
+        }
+    -->
+</script>
+<body>
+<form name="ff" id="zhuce" action="data.php" method="post">
+    <label>姓名：<input type="text" name="xingming" id="xingming" value="王宝强"></label>
+    <label>您对我们的服务满意吗？<!-- radio表示单选，name值必须一样，默认选项用checked标识 -->
+        <input type="radio" name="manyidu" value="1" checked>满意
+        <input type="radio" name="manyidu" value="0">不满意
+    </label>
+    <label>爱好：<!-- checkbox表示复选，name值必须一样，默认选项用checked标识 -->
+        <input type="checkbox" name="aihao" value="computer">电脑
+        <input type="checkbox" name="aihao" value="basketball">篮球
+        <input type="checkbox" name="aihao" value="football">足球
+    </label>
+    <label>请选择课程：<!-- select菜单，选项用option，默认选项用selected标识 -->
+        <select name="kecheng" id="lesson">
+            <option value="" selected>请选择课程</option>
+            <option value="lishi">历史</option>
+            <option value="huaxue">化学</option>
+            <option value="shuxue">数学</option>
+        </select>
+    </label>
+    <label>请反馈您的意见：<!-- 文本输入区域 -->
+        <textarea name="neirong" id="content" cols="30" rows="10">请在此处输入文本</textarea>
+    </label>
+    <label><input id="anniu" type="button" value="点我" on></label>
+    <label><input id="restart" type="reset" value="重新填写"></label>
+    <label><input id="tijiao" type="submit" value="注册"></label><!-- 把数据提交给服务器，会刷新网页 -->
+    <label><input type="button" value="单击" onclick="clickme(document.getElementById('xingming').value)"></label>
+    <label><input type="button" value="双击" ondblclick="clickme(document.getElementById('xingming').value)"></label>
+    <label><input type="button" value="鼠标放上" onmouseover="clickme(document.getElementById('xingming').value)"></label>
+    <label><input type="button" value="鼠标移开" onmouseout="clickme(document.getElementById('xingming').value)"></label>
+</form>
+</body></xmp>
+            效果预览：
+
+            <form name="ff" id="zhuce" action="data.php" method="post">
+                <label>姓名：<input type="text" name="xingming" id="xingming" value="王宝强"></label>
+                <label>您对我们的服务满意吗？<!-- radio表示单选，name值必须一样，默认选项用checked标识 -->
+                    <input type="radio" name="manyidu" value="1" checked>满意
+                    <input type="radio" name="manyidu" value="0">不满意
+                </label>
+                <label>爱好：<!-- checkbox表示复选，name值必须一样，默认选项用checked标识 -->
+                    <input type="checkbox" name="aihao" value="computer">电脑
+                    <input type="checkbox" name="aihao" value="basketball">篮球
+                    <input type="checkbox" name="aihao" value="football">足球
+                </label>
+                <label>请选择课程：<!-- select菜单，选项用option，默认选项用selected标识 -->
+                    <select name="kecheng" id="lesson">
+                        <option value="" selected>请选择课程</option>
+                        <option value="lishi">历史</option>
+                        <option value="huaxue">化学</option>
+                        <option value="shuxue">数学</option>
+                    </select>
+                </label>
+                <label>请反馈您的意见：<!-- 文本输入区域 -->
+                    <textarea name="neirong" id="content" cols="30" rows="10">请在此处输入文本</textarea>
+                </label>
+                <label><input id="anniu" type="button" value="点我" on></label>
+                <label><input id="restart" type="reset" value="重新填写"></label>
+                <label><input id="tijiao" type="submit" value="注册"></label><!-- 把数据提交给服务器，会刷新网页 -->
+                <label><input type="button" value="单击" onclick="clickme(document.getElementById('xingming').value)"></label>
+                <label><input type="button" value="双击" ondblclick="clickme(document.getElementById('xingming').value)"></label>
+                <label><input type="button" value="鼠标放上" onmouseover="clickme(document.getElementById('xingming').value)"></label>
+                <label><input type="button" value="鼠标移开" onmouseout="clickme(document.getElementById('xingming').value)"></label>
+            </form>
+
+
+
+
+        </div>
+        <div id="ft">
+            <div id="footer" class="w1220 cl">
+                <hr>
+                <center style="font-family: 微软雅黑; font-size: small; font-weight: normal; color: #009933">
+                        edited by cq&nbsp;©&nbsp;2011-2015&nbsp;1457063@qq.com
+                        <br>
+                        Generated by <a href="#" target="_blank">sublime</a> 
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ppt幻灯片切换</title>
+<style type="text/css">
+* { margin:0; padding:0; }
+body { background:#FFF; color:#333; font:12px/1.6em Helvetica, Arial, sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-size:1em; }
+a { color:#0287CA; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, li { list-style:none; }
+fieldset, img { border:none; }
+legend { display:none; }
+em, strong, cite, th { font-style:normal; font-weight:normal; }
+input, textarea, select, button { font:12px Helvetica, Arial, sans-serif; }
+table { border-collapse:collapse; }
+html { overflow:-moz-scrollbars-vertical; } 
+#ibanner { position:relative; width:650px; height:250px; overflow:hidden; margin:20px 0 20px 300px; }
+#ibanner_pic {}
+#ibanner_pic a { position:absolute; top:0; display:block; width:650px; height:250px; overflow:hidden; }
+#ibanner_btn { position:absolute; z-index:9999; right:5px; bottom:5px; font-weight:700; font-family:Arial; }
+#ibanner_btn span { display:block; float:left; margin-left:4px; padding:0 5px; background:#000; cursor:pointer; }
+#ibanner_btn .normal { height:20px; margin-top:8px; border:1px solid #999; color:#999; font-size:16px; line-height:20px; }
+#ibanner_btn .current { height:28px; border:1px solid #FF5300; color:#FF5300; font-size:28px; line-height:28px; }
+</style>
+<script type="text/javascript">
+function $(a) {
+	return document.getElementById(a)
+}
+function addLoadEvent(a) {
+	var b = window.onload;
+	window.onload = "function" != typeof window.onload ? a: function() {
+		b(),
+		a()
+	}
+}
+function addBtn() {
+	if ($("ibanner") && $("ibanner_pic")) {
+		var a = $("ibanner_pic").getElementsByTagName("a");
+		if (0 != a.length) {
+			var b = document.createElement("div");
+			b.setAttribute("id", "ibanner_btn");
+			for (var c = "",
+			d = 1; d <= a.length; d++) {
+				var e = '<span class="normal">' + d + "</span>";
+				c += e
+			}
+			b.innerHTML = c,
+			$("ibanner").appendChild(b),
+			$("ibanner_btn").getElementsByTagName("span")[0].className = "current";
+			for (var f = 0; f < a.length; f++) {
+				var g = "picLi_" + f;
+				a[f].setAttribute("id", g)
+			}
+		}
+	}
+}
+function moveElement(a, b, c, d) {
+	if (!document.getElementById) return ! 1;
+	if (!document.getElementById(a)) return ! 1;
+	var e = document.getElementById(a);
+	e.movement && clearTimeout(e.movement),
+	e.style.left || (e.style.left = "0px"),
+	e.style.top || (e.style.top = "0px");
+	var f = parseInt(e.style.left),
+	g = parseInt(e.style.top);
+	if (f == b && g == c) return moveing = !1,
+	!0;
+	if (b > f) {
+		var h = Math.ceil((b - f) / 10);
+		f += h
+	}
+	if (f > b) {
+		var h = Math.ceil((f - b) / 10);
+		f -= h
+	}
+	if (c > g) {
+		var h = Math.ceil((c - g) / 10);
+		g += h
+	}
+	if (g > c) {
+		var h = Math.ceil((g - c) / 10);
+		g -= h
+	}
+	e.style.left = f + "px",
+	e.style.top = g + "px";
+	var i = "moveElement('" + a + "'," + b + "," + c + "," + d + ")";
+	e.movement = setTimeout(i, d)
+}
+function classNormal() {
+	for (var a = $("ibanner_btn").getElementsByTagName("span"), b = 0; b < a.length; b++) a[b].className = "normal"
+}
+function picZ() {
+	for (var a = $("ibanner_pic").getElementsByTagName("a"), b = 0; b < a.length; b++) a[b].style.zIndex = "1"
+}
+function iBanner() {
+	if ($("ibanner") && $("ibanner_pic") && $("ibanner_btn")) {
+		$("ibanner").onmouseover = function() {
+			autoKey = !0
+		},
+		$("ibanner").onmouseout = function() {
+			autoKey = !1
+		};
+		var a = $("ibanner_btn").getElementsByTagName("span"),
+		b = $("ibanner_pic").getElementsByTagName("a");
+		if (1 != b.length) {
+			b[0].style.zIndex = "2";
+			for (var c = 0; c < a.length; c++) a[c].onmouseover = function() {
+				for (var c = 0; c < a.length; c++) if ("current" == a[c].className) var d = c;
+				classNormal(),
+				picZ(),
+				this.className = "current",
+				b[d].style.zIndex = "2";
+				var e = this.childNodes[0].nodeValue - 1;
+				b[e].style.zIndex = "3",
+				d != e && (b[e].style.left = "650px", moveElement("picLi_" + e, 0, 0, 10))
+			}
+		}
+	}
+}
+var autoKey = !1;
+setInterval("autoBanner()", 5e3);
+function autoBanner() {
+	if ($("ibanner") && $("ibanner_pic") && $("ibanner_btn") && !autoKey) {
+		var a = $("ibanner_btn").getElementsByTagName("span"),
+		b = $("ibanner_pic").getElementsByTagName("a");
+		if (1 != b.length) {
+			for (var c = 0; c < a.length; c++) if ("current" == a[c].className) var d = c;
+			if (d == b.length - 1) classNormal(),
+			picZ(),
+			a[0].className = "current",
+			b[d].style.zIndex = "2",
+			b[0].style.zIndex = "3",
+			b[0].style.left = "650px",
+			moveElement("picLi_0", 0, 0, 10);
+			else {
+				classNormal(),
+				picZ();
+				var e = d + 1;
+				a[e].className = "current",
+				b[d].style.zIndex = "2",
+				b[e].style.zIndex = "3",
+				b[e].style.left = "650px",
+				moveElement("picLi_" + e, 0, 0, 10)
+			}
+		}
+	}
+}
+addLoadEvent(addBtn);
+addLoadEvent(iBanner);
+</script>
+</head>
+<body>
+<div id="ibanner">
+<div id="ibanner_pic">
+<a href="../index.html"><img src="images/1.jpg" alt="" /></a>
+<a href="../index.html"><img src="images/2.jpg" alt="" /></a>
+<a href="../index.html"><img src="images/3.jpg" alt="" /></a>
+<a href="../index.html"><img src="images/4.jpg" alt="" /></a>
+</div>
+</div><!--ibanner end-->
+<div style="height:20px; background:#EEE;"></div>
+</body>
+</html>

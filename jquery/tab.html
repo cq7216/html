@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>页面加载时弹出一个对话框</title>
+        <link media="all" rel="stylesheet" href="../css/reset.css" type="text/css" />
+        <link type="text/css" rel="stylesheet" href="../css/text.css" />
+        <link rel="stylesheet" href="../css/viki.css">
+        <!-- 后盾网写法开始 -->
+        <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript">
+
+        </script>
+        <!-- 后盾网写法结束 -->
+    </head>
+    <body>
+    <!-- 固定头部 -->
+        <iframe src="../header.html" frameborder="0" width="100%" height="55px"></iframe>
+    <!-- 内容开始 -->
+        <div class="main w1220">
+            <br>
+            <center style="font-family: 'Microsoft Yahei', sans-serif; font-size: 1.80em; 
+                font-weight: normal; color: #FF6600">选项卡效果</center>
+            <!-- 知识点 -->
+            <h3>1、知识点</h3>
+            <p><code>var hdw = $('.box ul li');</code>表示定义一个变量，方便以后调用时书写方便</p>
+            <p><code>$('li').hover(function(){});</code> .hover表示鼠标放上执行某函数；</p>
+            <p><code>$('li').click(function(){});</code> .click表示点击执行某函数</p>
+            <p><code>$('li').hover(function(){$(this).addClass('one');})</code>表示鼠标放上时在所在节点添加样式one</p>
+            <p><code>$('li').hover(function(){$(this).addClass('one').siblings().removeClass();})</code>表示鼠标放上时在所在节点添加样式one，并在其兄弟节点删除样式one</p>
+            <p><code>var hdw_index = hdw.index(this);</code> 表示将li的索引与content中的索引对应起来</p>
+            <p><code>$('.ct').eq(hdw_index).show().siblings().hide();});</code> 表示将第hdw_index个.ct元素显示，其兄弟元素隐藏</p> 
+            <h3>2、具体代码</h3>
+            <xmp><!-- 后盾网写法开始 -->
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.ct:gt(0)').hide();
+    var hdw = $('.box ul li');
+    hdw.hover(function(){ //.hover表示鼠标放上执行某函数；.click表示点击执行某函数
+        $(this).addClass('one')
+                .siblings().removeClass();//兄弟节点去除掉Class
+    var hdw_index = hdw.index(this);//将li的索引与content中的索引对应起来
+    $('.ct').eq(hdw_index).show()
+            .siblings().hide();
+    });
+});
+</script>
+<style type="text/css">
+*{padding:0;margin: 0;}
+.box ul{list-style-type: none;height:30px;line-height: 30px;}
+.box ul li{float:left;border:1px solid #fff;padding:0 10px;margin-right: 5px;border-bottom:none;position: relative;/*position:relative解决IE7兼容性问题*/cursor:pointer;/*cursor:pointer;表示鼠标放上后显示手型图标*/}
+.content{width:325px;border:1px solid #fff;padding:10px;height:100px;}
+* html .content{margin-top:-1px;}/*解决IE6差1个像素的问题*/
+.box ul li.one{background: #000;}
+</style>
+<!-- 后盾网写法结束 -->
+<div class="box">
+    <ul>
+        <li class="one">菜单一</li>
+        <li>菜单二</li>
+        <li>菜单三</li>
+    </ul>
+</div>
+<div class="content">
+    <div class="ct">菜单一的内容</div>
+    <div class="ct">菜单二的内容</div>
+    <div class="ct">菜单三的内容</div>
+</div></xmp>
+
+            <h3>3、举例</h3>
+        <!-- 后盾网写法开始 -->
+        <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('.ct:gt(0)').hide();
+            var hdw = $('.box ul li');
+            hdw.hover(function(){ //.hover表示鼠标放上执行某函数；.click表示点击执行某函数
+                $(this).addClass('one')
+                        .siblings().removeClass();//兄弟节点去除掉Class
+            var hdw_index = hdw.index(this);//将li的索引与content中的索引对应起来
+            $('.ct').eq(hdw_index).show()
+                    .siblings().hide();
+            });
+        });
+        </script>
+        <style type="text/css">
+        *{padding:0;margin: 0;}
+        .box ul{list-style-type: none;height:30px;line-height: 30px;}
+        .box ul li{float:left;border:1px solid #fff;padding:0 10px;margin-right: 5px;border-bottom:none;position: relative;/*position:relative解决IE7兼容性问题*/cursor:pointer;/*cursor:pointer;表示鼠标放上后显示手型图标*/}
+        .content{width:325px;border:1px solid #fff;padding:10px;height:100px;}
+        * html .content{margin-top:-1px;}/*解决IE6差1个像素的问题*/
+        .box ul li.one{background: #000;}
+        </style>
+        <!-- 后盾网写法结束 -->
+        <div class="box">
+            <ul>
+                <li class="one">菜单一</li>
+                <li>菜单二</li>
+                <li>菜单三</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="ct">菜单一的内容</div>
+            <div class="ct">菜单二的内容</div>
+            <div class="ct">菜单三的内容</div>
+        </div>
+
+
+        </div>
+        <div id="ft">
+            <div id="footer" class="w1220 cl">
+                <hr>
+                <center style="font-family: 微软雅黑; font-size: small; font-weight: normal; color: #009933">
+                        edited by cq&nbsp;©&nbsp;2011-2015&nbsp;1457063@qq.com
+                        <br>
+                        Generated by <a href="#" target="_blank">sublime</a> 
+            </div>
+        </div>
+    </body>
+</html>

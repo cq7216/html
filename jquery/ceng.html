@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>弹出层效果</title>
+        <link media="all" rel="stylesheet" href="../css/reset.css" type="text/css" />
+        <link type="text/css" rel="stylesheet" href="../css/text.css" />
+        <link rel="stylesheet" href="../css/viki.css">
+    </head>
+    <body>
+    <!-- 固定头部 -->
+        <iframe src="../header.html" frameborder="0" width="100%" height="55px"></iframe>
+    <!-- 内容开始 -->
+        <div class="main w1220">
+            <br>
+            <center style="font-family: 'Microsoft Yahei', sans-serif; font-size: 1.80em; 
+                font-weight: normal; color: #FF6600">弹出层效果</center>
+            <!-- 知识点 -->
+            <h3>1、知识点</h3>
+            <p><code>$(document).ready(function(){//功能});</code>表示文档加载完后执行某功能，此用法依赖于jquery.js</p>
+            <p><code> $('.one').click(function(){//功能});</code>表示点击class=one的元素时执行某功能</p>
+            <p><code>$('.box_all').show();</code>表示将class=box_all的元素显示</p>
+            <p><code>$('.box_all').hide();</code>表示将class=box_all的元素隐藏</p>
+            <p>先调用<code>jquery.easydrag.handler.beta2.js</code>文件，再执行下列函数：
+            <code>$('.box_all').easydrag();</code>表示可以对class=box_all的元素进行拖拽
+            </p>
+            <h3>2、具体代码</h3>
+<xmp><!-- 后盾网写法开始 -->
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.easydrag.handler.beta2.js"></script><!--用于鼠标拖拽弹出层，用法：$('.box_all').easydrag();-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.one').click(function(){
+            $('.box_all').show(); //单击class=one的元素时，将class=box_all的元素显示出来
+        });
+        $('span').click(function(){
+            $('.box_all').hide(); //单击span标签时，将class=box_all的元素隐藏，即实现关闭图层功能
+        });
+        $('.box_all').easydrag(); //可以对class=box_all的元素进行拖拽
+    });
+</script>
+<style type="text/css">
+*{padding:0;margin: 0;}
+.box_all{float:left;padding:5px;background: #eee;position:absolute;top:30%;left:30%;display: none;}
+.box{width:500px;border:1px solid #4c7ebd;}
+.box h1{height:30px;line-height: 30px;color:#fff;font-size:14px;background:#87b0e1;padding-left: 10px;margin: 0;}
+.box span{float:right;padding-right: 10px;cursor:pointer;}
+.box span a{display: block;height:30px;width: 30px;background: url(images/close.jpg) no-repeat;text-indent:-9999px;}
+.box span a:hover{border:0;background: url(images/close_hover.jpg) no-repeat;}
+.box p{padding:10px;height:400px;background: #fff;color:#000;border:3px solid #eee;margin: 0;}
+.one{display: block;}
+</style>
+<!-- 后盾网写法结束 -->
+<a href="#" class="one">后盾网教程</a><br>
+<input type="submit" class="one" value="后盾网教程" ><br>
+<input type="text" class="one" value="后盾网教程">
+<div class="box_all">
+    <div class="box">
+        <h1><span><a href="#">关闭</a></span>这是标题</h1>
+        <p>这是内容</p>
+    </div>
+</div></xmp>
+            <h3>3、示例</h3>
+            <!-- 后盾网写法开始 -->
+            <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+            <script type="text/javascript" src="js/jquery.easydrag.handler.beta2.js"></script><!--用于鼠标拖拽弹出层，用法：$('.box_all').easydrag();-->
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('.one').click(function(){
+                        $('.box_all').show(); //单击class=one的元素时，将class=box_all的元素显示出来，即实现弹出图层功能，即实现弹出图层功能
+                    });
+                    $('span').click(function(){
+                        $('.box_all').hide(); //单击span标签时，将class=box_all的元素隐藏，即实现关闭图层功能
+                    });
+                    $('.box_all').easydrag(); //可以对class=box_all的元素进行拖拽
+                });
+            </script>
+            <style type="text/css">
+            *{padding:0;margin: 0;}
+            .box_all{float:left;padding:5px;background: #eee;position:absolute;top:30%;left:30%;display: none;}
+            .box{width:500px;border:1px solid #4c7ebd;}
+            .box h1{height:30px;line-height: 30px;color:#fff;font-size:14px;background:#87b0e1;padding-left: 10px;margin: 0;}
+            .box span{float:right;padding-right: 10px;cursor:pointer;}
+            .box span a{display: block;height:30px;width: 30px;background: url(images/close.jpg) no-repeat;text-indent:-9999px;}
+            .box span a:hover{border:0;background: url(images/close_hover.jpg) no-repeat;}
+            .box p{padding:10px;height:400px;background: #fff;color:#000;border:3px solid #eee;margin: 0;}
+            .one{display: block;}
+            </style>
+            <!-- 后盾网写法结束 -->
+            <a href="#" class="one">后盾网教程</a><br>
+            <input type="submit" class="one" value="后盾网教程" ><br>
+            <input type="text" class="one" value="后盾网教程">
+            <div class="box_all">
+                <div class="box">
+                    <h1><span><a href="#">关闭</a></span>这是标题</h1>
+                    <p>这是内容</p>
+                </div>
+            </div>
+        </div>
+        <div id="ft">
+            <div id="footer" class="w1220 cl">
+                <hr>
+                <center style="font-family: 微软雅黑; font-size: small; font-weight: normal; color: #009933">
+                        edited by cq&nbsp;©&nbsp;2011-2015&nbsp;1457063@qq.com
+                        <br>
+                        Generated by <a href="#" target="_blank">sublime</a> 
+            </div>
+        </div>
+    </body>
+</html>

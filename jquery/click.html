@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>点击时弹出一个对话框</title>
+        <link media="all" rel="stylesheet" href="../css/reset.css" type="text/css" />
+        <link type="text/css" rel="stylesheet" href="../css/text.css" />
+        <link rel="stylesheet" href="../css/viki.css">
+        
+        
+    </head>
+    <body>
+    <!-- 固定头部 -->
+        <iframe src="../header.html" frameborder="0" width="100%" height="55px"></iframe>
+    <!-- 内容开始 -->
+        <div class="main w1220">
+            <br>
+            <center style="font-family: 'Microsoft Yahei', sans-serif; font-size: 1.80em; 
+                font-weight: normal; color: #FF6600">点击时弹出一个对话框</center>
+            <!-- 知识点 -->
+            <h3>1、知识点</h3>
+            <p><code>$(document).ready(function(){//功能});</code>表示文档加载完后执行某功能，此用法依赖于jquery.js</p>
+            <p><code>$('a').click(function(){//功能});</code>表示点击a标签时执行某功能</p>
+            <p><code>$('.button').click(function(){//功能});</code>表示点击calss=button元素时执行某功能</p>
+            <p><code>$('input:text').click(function(){//功能});</code>表示点击文本框标签时执行某功能</p>
+            <p><code>$('input:text:first').click(function(){//功能});</code>表示点击第一个文本框标签时执行某功能</p>
+            <p><code>$('input:text:eq(2)').click(function(){//功能});</code>表示点击第三个文本框标签时执行某功能，0为第一个，1为第二个，2为第三个</p>
+            <p><code>$('input:text:even').click(function(){//功能});</code>表示点击第奇数个文本框标签时执行某功能</p>
+            <p><code>$('input:text:odd').click(function(){//功能});</code>表示点击第偶数个文本框标签时执行某功能</p>
+            <p><code>$('input:text:last').click(function(){//功能});</code>表示点击最后一个文本框标签时执行某功能</p>
+            <p><code>$('input:checkbox[name="dd"]').click(function(){//功能});</code>表示点击name=dd的复选框标签时执行某功能</p>
+            <h3>2、用法一</h3>
+            <p>在<code>head标签</code>中添加下面代码</p>
+            <xmp><!-- 后盾网写法开始 -->
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('a').click(function(){
+            alert("这是a弹出的内容");
+        });  
+        $('.button').click(function(){
+            alert(document.getElementById("anniu").value);//弹出id=anniu的元素的value值
+        });
+        $('input:text:first').click(function(){
+            alert("这是第一个文本框弹出的内容");
+        });
+        $('input:text:eq(2)').click(function(){
+            alert("这是第三个文本框弹出的内容");//从0开始，2表示第三个
+        });
+        $('input:text:last').click(function(){
+            alert("这是最后一个文本框弹出的内容");
+        });
+        $('input:text:odd').click(function(){
+            alert("这是第偶数个文本框弹出的内容");//奇数用even表示，偶数用odd
+        });
+        $('input:checkbox[name="dd"]').click(function(){
+            alert("这是box弹出的内容");
+        });
+        $('#dd').click(function(){
+            alert("这是div弹出的内容");
+        });
+    });
+</script>
+<!-- 后盾网写法结束 --></xmp>
+<p>下面是body标签中的内容</p>
+<xmp><a href="#">点击弹出一个对话框</a>
+<input type="button" class="button" value="按钮">
+<input type="text" class="text">
+<input type="text" class="text">
+<input type="text" class="text">
+<input type="text" class="text">
+<input type="text" class="text">
+<input type="checkbox" name="dd" id="">
+<div style="width:100px;height:100px;background-color:#eee;" id="dd"></div></xmp>
+    <p><code>:first</code>表示第一个，<code>:last</code>表示最后一个，<code>:even</code>表示第奇数个，<code>:odd</code>表示第偶数个，<code>:eq(0)</code>表示第一个，<code>:gt(0)</code>表示大于第0个，<code>:eq(n)</code>表示第n-1个，<code>[name="dd"]</code>表示name为dd的标签</p>
+    <h3>4、用法二</h3>
+<p>也可用此方法（老杜写法）</p>
+<xmp><!-- 老杜写法开始 -->
+<script language="javascript">
+<!--
+    function clickme(){
+        alert("这是老杜点击弹出的内容");    //document.getElementById("id名称").value函数从id中获取想要的信息
+    }
+-->
+</script>
+<!-- 老杜写法结束 --></xmp>
+<p>下面是body标签中的内容</p>
+<xmp><input type="button" value="单击按钮" onclick="clickme()">
+<input type="button" value="双击按钮" ondblclick="clickme()">
+<input type="button" value="鼠标放上" onmouseover="clickme()">
+<input type="button" value="鼠标移开" onmouseout="clickme()"></xmp>
+            <h3>4、示例</h3>
+            <!-- 后盾网写法开始 -->
+        <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('a').click(function(){
+                    alert("这是a弹出的内容");
+                });  
+                $('.button').click(function(){
+                    alert(document.getElementById("anniu").value);//弹出id=anniu的元素的value值
+                });
+                $('input:text:first').click(function(){
+                    alert("这是第一个文本框弹出的内容");
+                });
+                $('input:text:eq(2)').click(function(){
+                    alert("这是第三个文本框弹出的内容");//从0开始，2表示第三个
+                });
+                $('input:text:last').click(function(){
+                    alert("这是最后一个文本框弹出的内容");
+                });
+                $('input:text:odd').click(function(){
+                    alert("这是第偶数个文本框弹出的内容");//奇数用even表示，偶数用odd
+                });
+                $('input:checkbox[name="dd"]').click(function(){
+                    alert("这是box弹出的内容");
+                });
+                $('#dd').click(function(){
+                    alert("这是div弹出的内容");
+                });
+            });
+        </script>
+        <!-- 后盾网写法结束 -->
+            <a href="#">点击弹出一个对话框</a>
+            <input type="button" class="button" id="anniu" value="按钮">
+            <input type="text" class="text">
+            <input type="text" class="text">
+            <input type="text" class="text">
+            <input type="text" class="text">
+            <input type="text" class="text">
+            <input type="checkbox" name="dd" id="">
+            <div style="width:100px;height:100px;background-color:#eee;" id="dd"></div>
+            <hr>
+            <!-- 老杜写法开始 -->
+        <script language="javascript">
+            <!--
+                function clickme(){
+                    alert("这是老杜点击弹出的内容");    //document.getElementById("id名称").value函数从id中获取想要的信息
+                }
+            -->
+        </script>
+        <!-- 老杜写法结束 -->
+            <input type="button" value="单击按钮" onclick="clickme()">
+            <input type="button" value="双击按钮" ondblclick="clickme()">
+            <input type="button" value="鼠标放上" onmouseover="clickme()">
+            <input type="button" value="鼠标移开" onmouseout="clickme()">
+
+        </div>
+        <div id="ft">
+            <div id="footer" class="w1220 cl">
+                <hr>
+                <center style="font-family: 微软雅黑; font-size: small; font-weight: normal; color: #009933">
+                        edited by cq&nbsp;©&nbsp;2011-2015&nbsp;1457063@qq.com
+                        <br>
+                        Generated by <a href="#" target="_blank">sublime</a> 
+            </div>
+        </div>
+    </body>
+</html>

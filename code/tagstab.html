@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <title>空降兵新闻中心（多标签切换）</title>
+        <style type="text/css">
+            body{padding:5px; }
+            h1,h3,dl,dd,p,ul,li{margin:0; padding:0; }
+            a{text-decoration:none; } 
+            /*新闻中心开始*/
+            .areanews{width:360px; }
+            .xwzx{border-left:1px solid #E1E1E1; border-right:1px solid #E1E1E1; height:328px; }
+            .xwzx ul{color:#900; height:30px; background:url(images/icon.png) repeat-x 0 -190px; list-style:none; }
+            .xwzx li{float:left; line-height:28px; width:70px; text-align:center; border-right:1px solid #E1E1E1; border-top:1px solid #E1E1E1; }
+            .xwzx li.hover{border-bottom:1px solid white; background:white; font-weight:bold; }
+            .xwzx li a{font-size:14px; color:#8F1D21; } 
+            .xwzx li a:hover{color:blue; } 
+            .xwzx dl{padding:15px 5px 10px 5px; } 
+            .head_news{padding-bottom:10px; } 
+            .head_news h3{font-size:16px; line-height:24px; text-align:center; } 
+            .head_news h3 a{color:#cc0100; } 
+            .head_news p{font-size:13px; padding:5px 0; line-height:150%; text-indent:20px; padding-bottom:10px; color:#666; background:url(images/line.gif) repeat-x left bottom; } 
+            em{font-style:normal; } 
+            .xwzx dd{background:url(images/list.png) no-repeat left center; font-size:14px; color:#f60; line-height:26px; position:relative; margin-left:5px; } 
+            .xwzx dd a{padding-left:8px; color:#313534; } 
+            span.datetime{position:absolute; right:5px; } 
+            .underline_area{height:5px; line-height:5px; font-size:0px; background:url(images/back.gif) no-repeat -141px -79px; } 
+            /*新闻中心结束*/
+            /*部队讯息开始*/
+            .content{width:730px; } 
+            .bdnewszz{height:100%; border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; } 
+            .bdnewszz ul{list-style:none; color:#990; height:30px; background:url(images/icon.png) repeat-x 0 -190px; } 
+            .bdnewszz ul span{float:left; font-size:14px; font-weight:bold; line-height:30px; padding:0 15px; border-right:1px solid #e1e1e1; } 
+            .bdnewszz ul li{line-height:28px; width:73px; text-align:center; white-space:nowrap; float:left; border-top:1px solid #e1e1e1; border-right:1px solid #e1e1e1; } 
+            .bdnewszz ul li.hover{border-bottom:1px solid white; background:white; font-weight:bold; } 
+            .bdnewszz ul li a{font-size:14px; color:#369; } 
+            .bdnewszz ul li a:hover{} 
+            .bdnewszz dl{padding:10px 15px; } 
+            .left{float:left; } 
+            .bdnewszz dl dd{width:348px; float:left; background:url(images/list.png) no-repeat left center; font-size:14px; line-height:26px; height:26px; } 
+            .bdnewszz dl dd a{padding:0 5px; color:#313534; } 
+            .pic_article1 ul{min-height:100px; height:100px; clear:both; padding-top:15px; background:none repeat-x left top; }
+            .pic_article1 ul li{width:19.9%; text-align:center; float:left; overflow:hidden; border-width:0px; } 
+            .pic_article1 ul li a{display:block; padding:0 5px; color:#333; } 
+            .pic_article1 ul li span{display:block; line-height:19px; padding:0px 10px; border:none; font-weight:normal; } 
+            .pic_article1 ul li a img{width:122px; height:83px; padding:2px; border:1px solid #d3d8dc; background:#ebf0f4; overflow:hidden; } 
+            .underline_left{height:7px; line-height:7px; font-size:0px; background:url(images/back.gif) no-repeat left -269px; }
+            /*部队讯息结束*/
+            /*建言献策开始*/
+            .content{width:730px; } 
+            .jyxc{border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; height:240px; } 
+            .jyxc ul{list-style:none; height:30px; background:url(images/icon.png) repeat-x 0 -190px; color:#900; } 
+            .jyxc ul span{float:left; line-height:30px; font-size:14px; font-weight:bold; padding:0 15px; border-right:1px solid #e1e1e1; } 
+            .right{float:right; } 
+            .jyxctg{padding:6px 15px 6px 15px; font-family: "黑体"; font-size: 16px; color:#900; } 
+            a.jyxctg:hover{color:red; } 
+            .jyxc li{float:left; line-height:28px; width:160px; text-align:center; border-right:1px solid #e1e1e1; border-top:1px solid #e1e1e1; } 
+            .jyxc li.hover{border-bottom:1px solid white; background:white; font-weight:bold; } 
+            .jyxc li a{display:block; font-size:14px; color:#369; } 
+            .jyxc li a:hover{} 
+            .jyxc dl{padding:10px 15px; } 
+            .jyxc dl dd{float:left; background:url(images/list.png) no-repeat left center; line-height:25px; font-size:14px; color:#F60; width:100%; } 
+            .jyxc dl dd a{color:#313534; padding:0 5px; } 
+            .underline_left{height:7px; line-height:7px; font-size:0px; background:url(images/back.gif) no-repeat left -269px; }
+            /*建言献策结束*/
+            /*政工研究开始*/
+            .area{width:360px; } 
+            .area h3{height:30px; line-height:30px; font-size:14px; position:relative; background:url(images/bg_menus_gray.gif) repeat-x left center; border-top:1px solid #dbdbdb; border-right:1px solid #dbdbdb; border-left:1px solid #dbdbdb; border-bottom:0px none #dbdbdb; } 
+            .area h3 span{display:inline-block; padding-left:15px; }
+            .area h3 span em{padding-right:35px; color:#8F1d21; display:inline-block; }
+            .area h3 img{position:absolute; top:10px; left:310px; border:none; } 
+            .area ul{border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; padding:10px 10px 0px 10px; height:auto!important; list-style:none; } 
+            .area ul li{height:25px; line-height:25px; padding-left:8px; background:url(images/list.png) no-repeat left center; color:#999; position:relative; font-size:14px; } 
+            .area ul li span.datetime{position:absolute; top:0px; right:5px; color:#999; } 
+            .area ul li a{color:#313534; font-size:14px; } 
+            .area ul li a:hover{color:#f00; } 
+            /*政工研究结束*/
+            /*93688新闻开始*/
+            /*新闻开始*/
+            #con {
+                FONT-SIZE: 12px; MARGIN: 0px auto; WIDTH: 310px
+            }
+            #tags {
+                PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 10px; WIDTH: 310px; PADDING-TOP: 0px; HEIGHT: 23px
+            }
+            #tags LI {
+                BACKGROUND: url(images/tagleft.gif) no-repeat left bottom; FLOAT: left; MARGIN-RIGHT: 1px; LIST-STYLE-TYPE: none; HEIGHT: 23px
+            }
+            #tags LI A {
+                PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: url(images/tagright.gif) no-repeat right bottom; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #999;LINE-HEIGHT: 23px; PADDING-TOP: 0px; HEIGHT: 23px; TEXT-DECORATION: none
+            }
+            #tags LI.emptyTag {
+                BACKGROUND: none transparent scroll repeat 0% 0%; WIDTH: 4px
+            }
+            #tags LI.selectTag {
+                BACKGROUND-POSITION: left top; MARGIN-BOTTOM: -2px; POSITION: relative; HEIGHT: 25px
+            }
+            #tags LI.selectTag A {
+                BACKGROUND-POSITION: right top; COLOR: #000; LINE-HEIGHT: 25px; HEIGHT: 25px
+            }
+            #tagContent {
+                BORDER-RIGHT: #aecbd4 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #aecbd4 1px solid; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; BORDER-LEFT: #aecbd4 1px solid;PADDING-TOP:1px; BORDER-BOTTOM: #aecbd4 1px solid; BACKGROUND-COLOR: #fff
+            }
+            .tagContent {
+                DISPLAY: none;BACKGROUND: url(images/bg.gif) repeat-x;  WIDTH: 307px; COLOR: #474747; PADDING: 0px;MARGIN:0px;HEIGHT: 200px
+            }
+            .tagContent ul{
+                margin:0px;
+                padding:0px;
+            }
+            .tagContent ul li{
+                list-style:none;
+                margin-left:0px;
+                padding-left:20px;
+                font-size:11px;
+                line-height:24px;
+                text-align:left;
+                font-family:Verdana, Geneva, sans-serif;
+                color:#777e84;
+            }
+            #tagContent DIV.selectTag {
+                DISPLAY: block
+            }
+            .xinwen ul{
+                background:url(../img/xinwen_title.gif);
+                margin:0px;
+                padding:0px;
+            }
+            .xinwen ul li{
+                display:inline;
+                padding:0px;
+                margin:0px;
+            }
+            .xinwen li a{
+                line-height:31px;
+                margin:13px;
+                background:#e3e3e3;
+            }
+            .xinwen_post ul li{
+                list-style:none; 
+                background:url(../img/col11_tip.gif) no-repeat;
+                margin-left:0px;
+                padding-left:20px;
+                font-size:13px;
+                line-height:24px;
+            }
+            /*新闻结束*/
+            /*日期居右显示开始*/
+            span.datetime{
+                position:absolute;
+                right:3px;
+            }
+            li{
+                position:relative;
+            }
+            /*日期居右显示结束*/
+            a{
+                text-decoration:none;
+                color:black;
+            }
+            a:hover{
+                text-decoration:underline;
+                color:red;
+            }
+            /*93688结束*/
+        </style>
+    </head>
+    <body>
+        <!--仿自空降兵政工网http://27.124.24.18-->
+        <script language="javascript" type="text/javascript">
+            function setTab(name,cursel,n){
+                for(i=1;i<=n;i++){
+                    var menu=document.getElementById(name+i);
+                    var con=document.getElementById("con_"+name+"_"+i);
+                    menu.className=i==cursel?"hover":"";
+                    con.style.display=i==cursel?"block":"none";
+                }
+            } 
+        </script> 
+        <!--新闻中心开始-->
+        <div class="areanews">
+            <div class="xwzx">
+                <ul>
+                    <li class="hover" onmouseover="setTab('xwzx_top',1,4)" id="xwzx_top1"><a target="_blank" href='/Category_1/Index.aspx'>空降兵</a></li>
+                    <li onmouseover="setTab('xwzx_top',2,4)" id="xwzx_top2" class=""><a target="_blank" href='/Category_80/Index.aspx'>空军</a></li>
+                    <li onmouseover="setTab('xwzx_top',3,4)" id="xwzx_top3" class=""><a target="_blank" href='/Category_81/Index.aspx'>全军</a></li>
+                    <li onmouseover="setTab('xwzx_top',4,4)" id="xwzx_top4" class=""><a target="_blank" href='/Category_71/Index.aspx'>时事</a></li>
+                </ul>
+                <dl id="con_xwzx_top_1" style="display: block;">
+                    <div class="head_news">
+                        <h3>
+                            <a href="/Item/43014.aspx" target="&#xD;&#xA;_self&#xD;&#xA;">军范政委检查指导某航运团驻训分队</a>
+                        </h3>
+                        <p>空降兵政工网讯 王佳 刘愿成报道：3月11日下午，军范政委带领机关对空降兵某航运团驻训…
+                        <em class="more_content"><a href="/Item/43014.aspx">[详细内容]</a></em>
+                        </p>
+                    </div>
+                    <dd><a href="/Item/42705.aspx" target="_self ">周副军长带新任军后勤部贾全林部…</a><span class="datetime">03-09</span></dd>
+                    <dd><a href="/Item/42491.aspx" target="_self ">空军直属检察院焦晓北检察长到95…</a><span class="datetime">03-07</span></dd>
+                    <dd><a href="/Item/42384.aspx" target="_self ">王副军长检查慰问某航运团驻训分队</a><span class="datetime">03-07</span></dd>
+                    <dd><a href="/Item/42364.aspx" target="_self ">“抗洪抢险先锋营”学雷锋活动纪实</a><span class="datetime">03-06</span></dd>
+                    <dd><a href="/Item/42363.aspx" target="_self ">空降兵某通信团掀起学习贯彻“两…</a><span class="datetime">03-06</span></dd>
+                    <dd><a href="/Item/41414.aspx" target="_self ">95900部队组织师团首长机关车辆…</a><span class="datetime">03-02</span></dd>
+                    <dd><a href="/Item/40309.aspx" target="_self ">95918部队一营广泛开展“我戒烟 …</a><span class="datetime">02-26</span></dd>
+                </dl>
+                <dl style="display:none;" id="con_xwzx_top_2">
+                    <div class="head_news">
+                        <h3><a href="/Item/43052.aspx" target="&#xD;&#xA;_blank&#xD;&#xA;">学习雷锋扬传统 勤俭互助颂党恩</a></h3>
+                        <p>官兵学习雷锋事迹&ldquo;学习雷锋好榜样，忠于革命忠…
+                        <em class="more_content"><a href="/Item/43052.aspx">[详细内容]</a></em>
+                        </p>
+                    </div>
+                    <dd><a href="/Item/43038.aspx" target="_blank">愿做一颗“螺丝钉”</a><span class="datetime">03-13</span></dd>
+                    <dd><a href="/Item/42954.aspx" target="_blank">始终保持清醒认识 扭住关键环节落实</a><span class="datetime">03-12</span></dd>
+                    <dd><a href="/Item/42937.aspx" target="_blank">《空军党委机动费使用管理办法》修订下发</a><span class="datetime">03-12</span></dd>
+                    <dd><a href="/Item/42838.aspx" target="_blank">空军司令部举办雷锋精神宣讲报告会</a><span class="datetime">03-11</span></dd>
+                    <dd><a href="/Item/41694.aspx" target="_blank">雷锋，就在我们身边</a><span class="datetime">03-04</span></dd>
+                    <dd><a href="/Item/41693.aspx" target="_blank">挖潜的动力从何而来？</a><span class="datetime">03-04</span></dd>
+                    <dd><a href="/Item/41692.aspx" target="_blank">马晓天司令员田修思政委看望出席全国政…</a><span class="datetime">03-04</span></dd>
+                </dl>
+                <dl style="display:none;" id="con_xwzx_top_3">
+                    <div class="head_news">
+                        <h3>
+                            <a href="/Item/43051.aspx" target="&#xD;&#xA;_blank&#xD;&#xA;">43位“军属纪委书记”劲吹“节俭风”</a>
+                        </h3>
+                        <p>“开会一杯清茶、会餐一杯豆浆。”3月11日下午，浙江某预备役团警示教育活动别开生面…
+                        <em class="more_content"><a href="/Item/43051.aspx">[详细内容]</a></em>
+                        </p>
+                    </div>
+                    <dd><a href="/Item/43050.aspx" target="_blank">幸福，在传递中升华……</a><span class="datetime">03-13</span></dd>
+                    <dd><a href="/Item/43049.aspx" target="_blank">青春在南沙礁盘上飞扬</a><span class="datetime">03-13</span></dd>
+                    <dd><a href="/Item/43048.aspx" target="_blank">锅碗瓢盆奏响“幸福之歌”</a><span class="datetime">03-13</span></dd>
+                    <dd><a href="/Item/43047.aspx" target="_blank">北疆草原涌春潮</a><span class="datetime">03-13</span></dd>
+                    <dd><a href="/Item/43046.aspx" target="_blank">让思想政治教育实些，再实些</a><span class="datetime">03-13</span></dd>
+                    <dd><a href="/Item/43045.aspx" target="_blank">接待两批师团职领导干部理论轮训花了46…</a><span class="datetime">03-13</span></dd>
+                    <dd><a href="/Item/43044.aspx" target="_blank">铿锵玫瑰飘香三月春</a><span class="datetime">03-13</span></dd>
+                </dl>
+                <dl style="display:none;" id="con_xwzx_top_4">
+                    <div class="head_news">
+                        <h3>
+                            <a href="/Item/43034.aspx" target="&#xD;&#xA;_blank&#xD;&#xA;">欧盟举行外长会 磋商结束叙利亚危机</a>
+                        </h3>
+                        <p>11日，欧盟各国外长再次聚首布鲁塞尔，讨论如何结束叙利亚长达两年的危机局势。而…
+                        <em class="more_content"><a href="/Item/43034.aspx">[详细内容]</a></em>
+                        </p>
+                    </div>
+                    <dd><a href="/Item/43033.aspx" target="_blank">美国总统国家安全事务助理说欢迎中国和…</a><span class="datetime">03-13</span></dd>
+                    <dd><a href="/Item/43032.aspx" target="_blank">卡普里莱斯宣布挑战马杜罗</a><span class="datetime">03-13</span></dd>
+                    <dd><a href="/Item/43031.aspx" target="_blank">美媒：奥巴马“亚洲重心”以日本为中心</a><span class="datetime">03-13</span></dd>
+                    <dd><a href="/Item/43030.aspx" target="_blank">日媒有关唐家璇访日报道被指不实</a><span class="datetime">03-13</span></dd>
+                    <dd><a href="/Item/42933.aspx" target="_blank">在叙利亚遭绑架女记者成功逃脱 曾被迫…</a><span class="datetime">03-12</span></dd>
+                    <dd><a href="/Item/42932.aspx" target="_blank">“基地”组织伊拉克分支宣布对48名叙士…</a><span class="datetime">03-12</span></dd>
+                    <dd><a href="/Item/42931.aspx" target="_blank">美媒称中国卫星碎片撞坏俄卫星 专家:拿…</a><span class="datetime">03-12</span></dd>
+                </dl>
+            </div>
+            <div class="underline_area"></div>
+        </div>
+        <!--新闻中心结束-->
+        <br />
+        <br />
+        <!--部队讯息开始-->
+        <div class="content">
+            <div class="bdnewszz">
+                <ul>
+                    <span><a  style="color:#8f1d21;" href="/Category_57/Index.aspx">部队讯息</a></span>
+                    <li class="hover" onmouseover="setTab('bdnews',1,8)" id="bdnews1"><a href='/Category_58/Index.aspx' target="_blank">95900部队</a></li>
+                    <li onmouseover="setTab('bdnews',2,8)" id="bdnews2" class=""><a href='/Category_59/Index.aspx' target="_blank">95971部队</a></li>
+                    <li onmouseover="setTab('bdnews',3,8)" id="bdnews3" class=""><a href='/Category_61/Index.aspx' target="_blank">95942部队</a></li>
+                    <li onmouseover="setTab('bdnews',4,8)" id="bdnews4" class=""><a href='/Category_62/Index.aspx' target="_blank">95848部队</a></li>
+                    <li onmouseover="setTab('bdnews',5,8)" id="bdnews5" class=""><a href='/Category_63/Index.aspx' target="_blank">95903部队</a></li>
+                    <li onmouseover="setTab('bdnews',6,8)" id="bdnews6" class=""><a href='/Category_64/Index.aspx' target="_blank">95825部队</a></li>
+                    <li onmouseover="setTab('bdnews',7,8)" id="bdnews7" class=""><a href='/Category_65/Index.aspx' target="_blank">95857部队</a></li>
+                    <li onmouseover="setTab('bdnews',8,8)" id="bdnews8" class=""><a href='/Category_89/Index.aspx' target="_blank">457医院</a></li>
+                </ul>
+                <dl id="con_bdnews_1" class="tabContent afContent" style="display: block;">
+                    <div class="left">
+                        <dd>&nbsp;<a href="#" target="_blank">95936部队召开“学习贯彻党章，弘扬…</a><font style="font-size:13px; color:#999999">(03月07日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">空降兵某炮兵团组织2012年度总结表彰…</a><font style="font-size:13px; color:#999999">(02月28日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">空降兵某炮兵团组织开展2013年新春团…</a><font style="font-size:13px; color:#999999">(02月17日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95936部队召开干部讲评会议</a><font style="font-size:13px; color:#999999">(01月31日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">空降兵某团召开军事工作会议</a><font style="font-size:13px; color:#999999">(01月31日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">空降兵某团召开党委全体（扩大）会议</a><font style="font-size:13px; color:#999999">(01月31日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95900部队营连主官集训工作落下帷幕</a><font style="font-size:13px; color:#999999">(01月25日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95982部队将警示教育课堂前移到驻地…</a><font style="font-size:13px; color:#999999">(01月21日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">师党委机关参加空降兵部队学习贯彻党…</a><font style="font-size:13px; color:#999999">(12月20日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">驻地消防武警部队到95936部队参观见学</a><font style="font-size:13px; color:#999999">(12月19日)</font></dd>
+                    </div>
+                    <!--新闻下边五张小图片开始-->
+                    <div class="pic_article1">
+                        <ul>
+
+                            <li><a href="#" target="_blank"><img src="images/1.jpg" alt="图片1" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开“…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/2.jpg" alt="图片2" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/3.jpg" alt="图片3" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/4.jpg" alt="图片4" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开干…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/5.jpg" alt="图片5" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某团召开军…</a></span></li>
+
+                            <div class="clear">
+                            </div>
+                        </ul>
+                    </div> 
+                    <!--新闻下边五张小图片结束-->
+                </dl>
+                <dl style="display:none;" class="tabContent afContent"  id="con_bdnews_2">
+                    <div class="left">
+                        <dd>&nbsp;<a href="#" target="_blank">训练场上不夜天</a><font style="font-size:13px; color:#999999">(03月11日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">爱心助学之花常开</a><font style="font-size:13px; color:#999999">(03月09日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95822部队组织开展空降地面动作训…</a><font style="font-size:13px; color:#999999">(03月09日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95971部队组织召开基层文化建设观摩</a><font style="font-size:13px; color:#999999">(03月09日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">师考核组到95918部队进行伞降地面…</a><font style="font-size:13px; color:#999999">(03月09日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95918部队积极开展“三八”妇女节…</a><font style="font-size:13px; color:#999999">(03月08日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95964部队组织家属“军营游园”活动</a><font style="font-size:13px; color:#999999">(03月08日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95822部队庆祝“三八”国际劳动妇女</a><font style="font-size:13px; color:#999999">(03月08日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95964部队组织“学习贯彻党章弘扬优</a><font style="font-size:13px; color:#999999">(03月07日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">多措并举助力新兵下连——95964部队</a><font style="font-size:13px; color:#999999">(03月06日)</font></dd>
+                    </div>
+                    <!--新闻下边五张小图片开始-->
+                    <div class="pic_article1">
+                        <ul>
+
+                            <li><a href="#" target="_blank"><img src="images/2.jpg" alt="图片1" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开“…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/3.jpg" alt="图片2" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/4.jpg" alt="图片3" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/5.jpg" alt="图片4" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开干…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/1.jpg" alt="图片5" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某团召开军…</a></span></li>
+
+                            <div class="clear">
+                            </div>
+                        </ul>
+                    </div> 
+                    <!--新闻下边五张小图片结束-->
+                </dl>
+                <dl style="display:none;" class="tabContent afContent"  id="con_bdnews_3">
+                    <div class="left">
+                        <dd>&nbsp;<a href="#" target="_blank">着眼提升五种能力 夯实基层建设基础</a><font style="font-size:13px; color:#999999">(01月29日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">空降兵上甘岭某部官兵无偿献血献爱心</a><font style="font-size:13px; color:#999999">(01月22日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95963部队召开2012年度专业骨干集训…</a><font style="font-size:13px; color:#999999">(12月10日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">炮兵团党委将上级党委机关的温暖送到…</a><font style="font-size:13px; color:#999999">(11月18日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">聚精会神  全员参与迎盛会</a><font style="font-size:13px; color:#999999">(11月08日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">严守政治纪律 完成“首要政治任务”</a><font style="font-size:13px; color:#999999">(11月06日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">空后军需物油部季副部长到95963部队…</a><font style="font-size:13px; color:#999999">(11月03日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95963部队召开2012年度团级单位等级…</a><font style="font-size:13px; color:#999999">(10月27日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">基层机关双向选</a><font style="font-size:13px; color:#999999">(10月24日)</font></dd>
+                        <dd>&nbsp;<a href="#" target="_blank">95963部队组织开展“以案说法”法制…</a><font style="font-size:13px; color:#999999">(10月12日)</font></dd>
+                    </div>
+                    <!--新闻下边五张小图片开始-->
+                    <div class="pic_article1">
+                        <ul>
+
+                            <li><a href="#" target="_blank"><img src="images/3.jpg" alt="图片1" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开“…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/4.jpg" alt="图片2" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/5.jpg" alt="图片3" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/1.jpg" alt="图片4" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开干…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/2.jpg" alt="图片5" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某团召开军…</a></span></li>
+
+                            <div class="clear">
+                            </div>
+                        </ul>
+                    </div> 
+                    <!--新闻下边五张小图片结束-->
+                </dl>
+                <dl style="display:none;" class="tabContent afContent"  id="con_bdnews_4">
+                    <div class="left">
+                        <dd>&nbsp;<a href="/Item/43063.aspx" target="_blank">空降兵某团司务长选拔竞争上岗</a><font style="font-size:13px; color:#999999">(03月13日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42876.aspx" target="_blank">空降兵某团组织开展“好书进军营”活动</a><font style="font-size:13px; color:#999999">(03月12日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42853.aspx" target="_blank">空降兵某团组织开展“坚定信念、铸牢…</a><font style="font-size:13px; color:#999999">(03月11日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42691.aspx" target="_blank">空降兵某团认真组织《政治工作条例》…</a><font style="font-size:13px; color:#999999">(03月08日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42690.aspx" target="_blank">空降兵某团组织82式无柄手雷实弹投掷</a><font style="font-size:13px; color:#999999">(03月08日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42490.aspx" target="_blank">空降兵某团信息保障显身手</a><font style="font-size:13px; color:#999999">(03月07日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42383.aspx" target="_blank">空降兵某团组织营门哨兵警卫规范学习</a><font style="font-size:13px; color:#999999">(03月07日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42382.aspx" target="_blank">湖北武警总队官兵代表赴空降兵某团观…</a><font style="font-size:13px; color:#999999">(03月07日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42032.aspx" target="_blank">空降兵某团组织官兵认真观看“两会”…</a><font style="font-size:13px; color:#999999">(03月05日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/41640.aspx" target="_blank">空降兵某团组织全体干部对“四个基本…</a><font style="font-size:13px; color:#999999">(03月05日)</font></dd>
+                    </div>
+                    <!--新闻下边五张小图片开始-->
+                    <div class="pic_article1">
+                        <ul>
+
+                            <li><a href="#" target="_blank"><img src="images/4.jpg" alt="图片1" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开“…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/5.jpg" alt="图片2" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/1.jpg" alt="图片3" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/2.jpg" alt="图片4" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开干…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/3.jpg" alt="图片5" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某团召开军…</a></span></li>
+
+                            <div class="clear">
+                            </div>
+                        </ul>
+                    </div> 
+                    <!--新闻下边五张小图片结束-->
+                </dl>
+                <dl style="display:none;" class="tabContent afContent"  id="con_bdnews_5">
+                    <div class="left">
+                        <dd>&nbsp;<a href="/Item/42040.aspx" target="_blank">空降兵某直升机团用实际行动践行雷锋…</a><font style="font-size:13px; color:#999999">(03月06日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42039.aspx" target="_blank">空军工程大学硕士研究生鲁芳教授为空…</a><font style="font-size:13px; color:#999999">(03月06日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/41426.aspx" target="_blank">空后卫生部郑巨军副部长一行到95903…</a><font style="font-size:13px; color:#999999">(03月03日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/41411.aspx" target="_blank">空降兵某直升机团组织开展“识别和抵…</a><font style="font-size:13px; color:#999999">(03月02日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/39914.aspx" target="_blank">空降兵某直升机团圆满完成春节节后开飞</a><font style="font-size:13px; color:#999999">(02月21日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/38916.aspx" target="_blank">空降兵某直升机团召开2012年度总结表…</a><font style="font-size:13px; color:#999999">(02月18日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/38557.aspx" target="_blank">空降兵某直升机团召开春节节中讲评会</a><font style="font-size:13px; color:#999999">(02月17日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/38556.aspx" target="_blank">空降兵某直升机团举行新春团拜游园活动</a><font style="font-size:13px; color:#999999">(02月17日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/38050.aspx" target="_blank">空降兵某直升机团召开“春节”战备管…</a><font style="font-size:13px; color:#999999">(02月08日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/38049.aspx" target="_blank">军首长机关春节前夕看望慰问95903部…</a><font style="font-size:13px; color:#999999">(02月08日)</font></dd>
+                    </div>
+                    <!--新闻下边五张小图片开始-->
+                    <div class="pic_article1">
+                        <ul>
+
+                            <li><a href="#" target="_blank"><img src="images/5.jpg" alt="图片1" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开“…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/1.jpg" alt="图片2" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/2.jpg" alt="图片3" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/3.jpg" alt="图片4" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开干…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/4.jpg" alt="图片5" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某团召开军…</a></span></li>
+
+                            <div class="clear">
+                            </div>
+                        </ul>
+                    </div> 
+                    <!--新闻下边五张小图片结束-->
+                </dl>
+                <dl style="display:none;" class="tabContent afContent"  id="con_bdnews_6">
+                    <div class="left">
+                        <dd>&nbsp;<a href="/Item/43057.aspx" target="_blank">某航运团汽车场务连组织官兵义务植树</a><font style="font-size:13px; color:#999999">(03月12日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42370.aspx" target="_blank">王副军长检查慰问某航运团驻训分队</a><font style="font-size:13px; color:#999999">(03月07日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42359.aspx" target="_blank">坚定信念跟党走　铸牢军魂谋打赢</a><font style="font-size:13px; color:#999999">(03月06日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42034.aspx" target="_blank">空降兵某航运团开展“学习雷锋精神、…</a><font style="font-size:13px; color:#999999">(03月05日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42033.aspx" target="_blank">空后工作组到某航运团检查指导飞行后…</a><font style="font-size:13px; color:#999999">(03月05日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42030.aspx" target="_blank">空降兵某航运团及时组织官兵收看“两…</a><font style="font-size:13px; color:#999999">(03月05日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/41643.aspx" target="_blank">坚定信念跟党走　铸牢军魂谋打赢</a><font style="font-size:13px; color:#999999">(03月05日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/41404.aspx" target="_blank">空降兵某航运团全面动员部署“学习贯…</a><font style="font-size:13px; color:#999999">(03月01日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/41022.aspx" target="_blank">增强法纪观念　筑牢思想防线</a><font style="font-size:13px; color:#999999">(02月28日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/40675.aspx" target="_blank">空降兵某航运团官兵通过视频接受军首…</a><font style="font-size:13px; color:#999999">(02月23日)</font></dd>
+                    </div>
+                    <!--新闻下边五张小图片开始-->
+                    <div class="pic_article1">
+                        <ul>
+
+                            <li><a href="#" target="_blank"><img src="images/1.jpg" alt="图片1" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开“…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/2.jpg" alt="图片2" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/3.jpg" alt="图片3" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/4.jpg" alt="图片4" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开干…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/5.jpg" alt="图片5" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某团召开军…</a></span></li>
+
+                            <div class="clear">
+                            </div>
+                        </ul>
+                    </div> 
+                    <!--新闻下边五张小图片结束-->
+                </dl>
+                <dl style="display:none;" class="tabContent afContent"  id="con_bdnews_7">
+                    <div class="left">
+                        <dd>&nbsp;<a href="/Item/42963.aspx" target="_blank">军“战神”演出队到通信团慰问演出</a><font style="font-size:13px; color:#999999">(03月12日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42856.aspx" target="_blank">空降兵某通信团新女兵参观军史馆、通…</a><font style="font-size:13px; color:#999999">(03月11日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42855.aspx" target="_blank">空降兵某通信团通过视频传输方式参加…</a><font style="font-size:13px; color:#999999">(03月11日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/42355.aspx" target="_blank">空降兵某通信团掀起学习贯彻“两会”…</a><font style="font-size:13px; color:#999999">(03月06日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/41645.aspx" target="_blank">空降兵某通信团组织召开“贯彻学习党…</a><font style="font-size:13px; color:#999999">(03月04日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/40671.aspx" target="_blank">规范枪弹管理  打牢安全基础</a><font style="font-size:13px; color:#999999">(02月27日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/40305.aspx" target="_blank">空降兵某通信团官兵通过视频传输方式…</a><font style="font-size:13px; color:#999999">(02月25日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/39943.aspx" target="_blank">空降兵某通信团召开开训动员大会</a><font style="font-size:13px; color:#999999">(02月23日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/39942.aspx" target="_blank">欢庆2013 活力新兵连</a><font style="font-size:13px; color:#999999">(02月23日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/38071.aspx" target="_blank">新春团拜闹军营  官兵同乐贺新春</a><font style="font-size:13px; color:#999999">(02月10日)</font></dd>
+                    </div>
+                    <!--新闻下边五张小图片开始-->
+                    <div class="pic_article1">
+                        <ul>
+
+                            <li><a href="#" target="_blank"><img src="images/5.jpg" alt="图片1" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开“…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/4.jpg" alt="图片2" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/3.jpg" alt="图片3" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/2.jpg" alt="图片4" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开干…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/1.jpg" alt="图片5" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某团召开军…</a></span></li>
+
+                            <div class="clear">
+                            </div>
+                        </ul>
+                    </div> 
+                    <!--新闻下边五张小图片结束-->
+                </dl>
+                <dl style="display:none;" class="tabContent afContent"  id="con_bdnews_8">
+                    <div class="left">
+                        <dd>&nbsp;<a href="/Item/11863.aspx" target="_blank">开展“军地共建生育关怀亲情结对活动”</a><font style="font-size:13px; color:#999999">(06月13日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/9959.aspx" target="_blank">457医院“学雷锋医疗队”义诊常态化</a><font style="font-size:13px; color:#999999">(04月29日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/9827.aspx" target="_blank">白衣天使奉爱心  涓涓真情献春蕾</a><font style="font-size:13px; color:#999999">(04月20日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/9823.aspx" target="_blank">空降兵部队干部家属年度健康大体检全…</a><font style="font-size:13px; color:#999999">(04月20日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/9256.aspx" target="_blank">四五七医院开展车辆安全宣讲教育</a><font style="font-size:13px; color:#999999">(03月23日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/9234.aspx" target="_blank">卫生学兵磨利剑  战地救护扬军威</a><font style="font-size:13px; color:#999999">(03月20日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/9072.aspx" target="_blank">精彩的“三八节”</a><font style="font-size:13px; color:#999999">(03月15日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/8707.aspx" target="_blank">弘扬雷锋精神、当好雷锋传人</a><font style="font-size:13px; color:#999999">(03月03日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/8600.aspx" target="_blank">省市区计生委领导莅临医院检查调研计…</a><font style="font-size:13px; color:#999999">(02月20日)</font></dd>
+                        <dd>&nbsp;<a href="/Item/8598.aspx" target="_blank">四五七医院举办龙年迎新春文艺晚会</a><font style="font-size:13px; color:#999999">(02月20日)</font></dd></div>
+                    <!--新闻下边五张小图片开始-->
+                    <div class="pic_article1">
+                        <ul>
+
+                            <li><a href="#" target="_blank"><img src="images/1.jpg" alt="图片1" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开“…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/2.jpg" alt="图片2" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/3.jpg" alt="图片3" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某炮兵团组…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/4.jpg" alt="图片4" width="160" height="120"></a><span><a href="#" target="_blank">95936部队召开干…</a></span></li>
+                            <li><a href="#" target="_blank"><img src="images/5.jpg" alt="图片5" width="160" height="120"></a><span><a href="#" target="_blank">空降兵某团召开军…</a></span></li>
+
+                            <div class="clear">
+                            </div>
+                        </ul>
+                    </div> 
+                    <!--新闻下边五张小图片结束-->
+                </dl>
+            </div>
+            <div class="underline_left"></div>
+        </div>
+        <!--部队讯息结束-->
+        <br />
+        <br />
+        <!--建言献策开始-->
+        <div class="content">
+            <div class="jyxc">
+                <ul>
+                    <span><a  style="color:#8f1d21;" href="#">建言献策</a></span><a class="jyxctg right" href='http://27.124.24.18/User/Content/Content.aspx?nodeId=92&modelId=1&Action=Add' target="_blank" title="">投 稿</a>
+                    <li class="hover" onmouseover="setTab('jyxc',1,8)" id="jyxc1"><a href='/Category_92/Index.aspx' target="_blank">空降兵建言献策</a></li>
+                    <li onmouseover="setTab('jyxc',2,8)" id="jyxc2" class=""><a href='/Category_90/Index.aspx' target="_blank">空军建言献策</a></li>
+                    <li onmouseover="setTab('jyxc',3,8)" id="jyxc3" class=""><a href='/Category_91/Index.aspx' target="_blank">总政建言献策</a></li>
+                </ul>  
+                <dl id="con_jyxc_1" class="tabContent afContent" style="display: block;">
+                    <dd>&nbsp;<a href="#" target="_blank">机关如何准确领会好领导意图</a><font style="font-size:13px">(95900部队政治部干部科干事&nbsp;陈辽阔)</font>
+                    <font style="color:#999999; font-size:13px">(2013年03月14日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">要把“暗能量”变成“正能量”</a><font style="font-size:13px">(95985部队61分队政治教导员&nbsp;向传永)</font>
+                    <font style="color:#999999; font-size:13px">(2013年03月13日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">对如何当好一名政治机关干事的思考</a><font style="font-size:13px">(95936部队政治处&nbsp;孙勇刚)</font>
+                    <font style="color:#999999; font-size:13px">(2013年03月13日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">基层忙乱的成因及对策</a><font style="font-size:13px">(95936部队政治处&nbsp;陈保华)</font>
+                    <font style="color:#999999; font-size:13px">(2013年03月13日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">基层保卫工作应把握的“五个关键词”</a><font style="font-size:13px">(95900部队保卫科&nbsp;王大猛)</font>
+                    <font style="color:#999999; font-size:13px">(2013年03月12日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">做好休假官兵教育管理“五要”</a><font style="font-size:13px">(95942部队&nbsp;李天松 廖磊鑫)</font>
+                    <font style="color:#999999; font-size:13px">(2013年03月11日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">基层官兵和谐“三字”经</a><font style="font-size:13px">(95963部队&nbsp;江虎 廖磊鑫)</font>
+                    <font style="color:#999999; font-size:13px">(2013年03月11日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">加强基层连队主官队伍建设的几点思考</a><font style="font-size:13px">(95963部队&nbsp;李天松 廖磊鑫)</font>
+                    <font style="color:#999999; font-size:13px">(2013年03月11日)</font>
+                    </dd>
+                </dl>
+                <dl style="display:none;" class="tabContent afContent"  id="con_jyxc_2">
+                    <dd>&nbsp;<a href="#" target="_blank">微博对开展思想政治教育的三点启示</a><font style="font-size:13px">(95971部队政治部宣传科干事&nbsp;涂凌晨)</font>
+                    <font style="color:#999999; font-size:13px">(2013年01月28日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">规避军事训练风险的几点思考</a><font style="font-size:13px">(95971部队司令部&nbsp;蒲世君 肖鑫锋)</font>
+                    <font style="color:#999999; font-size:13px">(2012年09月06日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">加强新时期基层团组织建设的几点思考</a><font style="font-size:13px">(95816部队&nbsp;涂东伟)</font>
+                    <font style="color:#999999; font-size:13px">(2012年08月11日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">深刻把握教育对象变化特点 紧贴实际抓好…</a><font style="font-size:13px">(95971部队副政治委员&nbsp;朱建军)</font>
+                    <font style="color:#999999; font-size:13px">(2012年08月08日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">莫让点验流于形式</a><font style="font-size:13px">(95918部队&nbsp;刘大丰)</font>
+                    <font style="color:#999999; font-size:13px">(2012年08月06日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">防汛抢险后勤保障措施浅谈</a><font style="font-size:13px">(95822部队&nbsp;宋俊毅)</font>
+                    <font style="color:#999999; font-size:13px">(2012年07月26日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">由“长跑运动”谈“稳中求进”</a><font style="font-size:13px">(95964部队&nbsp;田春荣 贾海波)</font>
+                    <font style="color:#999999; font-size:13px">(2012年07月23日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">加强当前部队思想政治教育的几点思考</a><font style="font-size:13px">(95816部队&nbsp;郑向华)</font>
+                    <font style="color:#999999; font-size:13px">(2012年07月22日)</font>
+                    </dd>
+                </dl>
+                <dl style="display:none;" class="tabContent afContent"  id="con_jyxc_3">
+                    <dd>&nbsp;<a href="#" target="_blank">不妨用好“奥运”这堂政治教育课</a><font style="font-size:13px">(95900部队政治部宣传科干事&nbsp;田留建)</font>
+                    <font style="color:#999999; font-size:13px">(2012年08月06日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">对构建网络思想政治教育体系的思考</a><font style="font-size:13px">(95971部队政治部主任&nbsp;李伟强)</font>
+                    <font style="color:#999999; font-size:13px">(2012年05月17日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">信息化人才培养应处理好四个关系</a><font style="font-size:13px">(95971部队政治部&nbsp;肖四生)</font>
+                    <font style="color:#999999; font-size:13px">(2012年04月16日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">报喜更报忧</a><font style="font-size:13px">(95985部队后勤处&nbsp;马沂峰)</font>
+                    <font style="color:#999999; font-size:13px">(2012年03月27日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">当好财务干部“六要诀”</a><font style="font-size:13px">(95985部队后勤处财务股&nbsp;王祥 杜维芳)</font>
+                    <font style="color:#999999; font-size:13px">(2012年03月12日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">对开展网络思想政治教育的调查与思考</a><font style="font-size:13px">(95918部队政治处宣传股干事&nbsp;周瑜)</font>
+                    <font style="color:#999999; font-size:13px">(2012年03月01日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">加强政工网编辑队伍建设的思考和建议</a><font style="font-size:13px">(95985部队后勤处&nbsp;马沂峰)</font>
+                    <font style="color:#999999; font-size:13px">(2012年02月09日)</font>
+                    </dd>
+                    <dd>&nbsp;<a href="#" target="_blank">龙年新春寄语：龙腾盛世——建言频道一路…</a><font style="font-size:13px">(95985部队后勤处&nbsp;马沂峰)</font>
+                    <font style="color:#999999; font-size:13px">(2012年01月29日)</font>
+                    </dd>
+                </dl>
+            </div>
+            <div class="underline_left"></div>
+        </div>
+        <!--建言献策结束-->
+        <br />
+        <br />
+        <!--政工研究开始-->
+        <div class="area">
+            <h3><span><em>政工研究</em></span><a href="/Category_85/Index.aspx" target="_blank" title="更多"><img src="images/more.gif" alt="更多" align="absmiddle"></a></h3>
+            <ul>
+
+
+                <li>
+                <span class="datetime">12-20</span>
+                <a href="/Item/31353.aspx" target="_blank">浅谈如何加强小散远直单位的工作指导</a>
+                </li>
+                <li>
+                <span class="datetime">12-19</span>
+                <a href="/Item/31330.aspx" target="_blank">加强精细化管理要搞好统筹兼顾</a>
+                </li>
+                <li>
+                <span class="datetime">12-18</span>
+                <a href="/Item/31308.aspx" target="_blank">积极运用现代化教学手段 大力加强和改进…</a>
+                </li>
+                <li>
+                <span class="datetime">12-11</span>
+                <a href="/Item/30236.aspx" target="_blank">提高官兵法律素质要善于引导</a>
+                </li>
+                <li>
+                <span class="datetime">12-11</span>
+                <a href="/Item/30245.aspx" target="_blank">新形势下思想政治教育要强化“四种意识”</a>
+                </li>
+                <li>
+                <span class="datetime">11-26</span>
+                <a href="/Item/28237.aspx" target="_blank">基层连队学习宣传贯彻党的十八大精神应把…</a>
+                </li>
+                <li>
+                <span class="datetime">11-24</span>
+                <a href="/Item/28299.aspx" target="_blank">运用系统论分析连队建设问题的思考</a>
+                </li>
+                <li>
+                <span class="datetime">11-16</span>
+                <a href="/Item/24958.aspx" target="_blank">对提升基层文化工作思想教育功能的几点思考</a>
+                </li>
+
+            </ul>
+            <div class="underline_area"></div>
+        </div>
+
+        <!--政工研究结束-->
+        <!-- 93688新闻标签开始 -->
+        <DIV id=con>
+            <UL id=tags>
+                <LI class=selectTag><A onmouseover="selectTag('tagContent0',this)" href="javascript:void(0)" target="_blank">国内</A> </LI>
+                <LI><A onmouseover="selectTag('tagContent1',this)" href="javascript:void(0)" target="_blank">国际</A> </LI>
+                <LI><A onmouseover="selectTag('tagContent2',this)" href="javascript:void(0)" target="_blank">军事</A> </LI>
+                <LI><A onmouseover="selectTag('tagContent3',this)" href="javascript:void(0)" target="_blank">经济</A> </LI>
+                <LI><A onmouseover="selectTag('tagContent4',this)" href="javascript:void(0)" target="_blank">体育</A> </LI>
+                <LI><A onmouseover="selectTag('tagContent5',this)" href="javascript:void(0)" target="_blank">娱乐</A> </LI>
+            </UL>
+            <DIV id=tagContent>
+                <DIV class="tagContent selectTag" id=tagContent0>
+                    <ul>
+                        <li>
+                        <span class="datetime">[03-12]</span>
+                        <a href="/Item/32533.aspx" target="_blank">习近平强调：牢牢把握党在新形势下的强…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[03-12]</span>
+                        <a href="/Item/32532.aspx" target="_blank">张德江、刘云山、王岐山分别参加代表团…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[03-12]</span>
+                        <a href="/Item/32531.aspx" target="_blank">俞正声当选全国政协主席 杜青林等23人…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[03-12]</span>
+                        <a href="/Item/32486.aspx" target="_blank">中国海监人员登抵西沙无人岛勘查</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[03-06]</span>
+                        <a href="/Item/32296.aspx" target="_blank">十二届全国人大一次会议开幕 胡锦涛习…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[03-06]</span>
+                        <a href="/Item/32295.aspx" target="_blank">习近平：深化改革开放 加大创新驱动发…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[03-06]</span>
+                        <a href="/Item/32294.aspx" target="_blank">李克强：同步推进新型四化 统筹城乡协…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[03-06]</span>
+                        <a href="/Item/32293.aspx" target="_blank">张德江：统筹城乡发展 缩小城乡差距</a>
+                        </li>
+                    </ul>
+                </DIV>
+                <DIV class="tagContent" id=tagContent1>
+                    <ul>
+
+                        <li>
+                        <span class="datetime">[03-04]</span>
+                        <a href="/Item/32099.aspx" target="_blank">美国少年设计小型核反应堆 能为十万家…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[03-01]</span>
+                        <a href="/Item/31960.aspx" target="_blank">外媒称叙利亚武装获中国fn-6单兵便携防…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[03-01]</span>
+                        <a href="/Item/31954.aspx" target="_blank">研究显示：吃得太好或加速疾病传播</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[03-01]</span>
+                        <a href="/Item/31953.aspx" target="_blank">nba明星访朝鲜称见鸟叔 鸟叔回应：我是…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[02-25]</span>
+                        <a href="/Item/31171.aspx" target="_blank">安倍访美 难解纠葛</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[02-20]</span>
+                        <a href="/Item/31146.aspx" target="_blank">习近平会见非盟委员会主席祖马</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[02-19]</span>
+                        <a href="/Item/31129.aspx" target="_blank">美媒称国会人员奢侈出访 强调中国接待…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[02-19]</span>
+                        <a href="/Item/31128.aspx" target="_blank">中方望欧美自贸协定谈判能遵循开放透明…</a>
+                        </li>
+                    </ul>
+                </DIV>
+                <DIV class=tagContent id=tagContent2>
+                    <ul>
+
+                        <li>
+                        <span class="datetime">[03-04]</span>
+                        <a href="/Item/32103.aspx" target="_blank">海军第十四批护航编队参加联合演习</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[02-27]</span>
+                        <a href="/Item/31683.aspx" target="_blank">国防专家：领土争端使全民海洋权益意识…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[02-26]</span>
+                        <a href="/Item/31534.aspx" target="_blank">美媒：近20年中国武器发展超过去500年 …</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[02-26]</span>
+                        <a href="/Item/31522.aspx" target="_blank">二炮司令部副团职干部“双考”面试频现…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[02-20]</span>
+                        <a href="/Item/31145.aspx" target="_blank">戴秉国会见非盟委员会主席祖马</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[02-20]</span>
+                        <a href="/Item/31143.aspx" target="_blank">中国海军首批8名战斗女舰员出征亚丁湾</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[02-18]</span>
+                        <a href="/Item/31116.aspx" target="_blank">印度国防支出2020年将达全球第四 仅次…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[02-18]</span>
+                        <a href="/Item/31115.aspx" target="_blank">解放军扩充潜艇部队 美称中国不会主导…</a>
+                        </li>
+                    </ul>
+                </DIV>
+                <DIV class=tagContent id=tagContent3>
+                    <ul>
+
+                        <li>
+                        <span class="datetime">[01-22]</span>
+                        <a href="/Item/30739.aspx" target="_blank">信用卡不验密1秒“闪付” 安全性不容忽…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-18]</span>
+                        <a href="/Item/25802.aspx" target="_blank">2011年中国追缴境内外赃款赃物计77.9亿…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[08-11]</span>
+                        <a href="/Item/18691.aspx" target="_blank">全国信用卡透支余额增长迅猛</a>
+                        </li>
+                    </ul>
+                </DIV>
+                <DIV class=tagContent id=tagContent4>
+                    <ul>
+
+                        <li>
+                        <span class="datetime">[09-13]</span>
+                        <a href="/Item/26566.aspx" target="_blank">李长春会见第14届残奥会中国体育代表团…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[08-03]</span>
+                        <a href="/Item/25953.aspx" target="_blank">爱之深 责之切 从奥运赛场看爱国主义弘扬</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-31]</span>
+                        <a href="/Item/25930.aspx" target="_blank">中国第九金 体操男子团体中国队夺冠</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-31]</span>
+                        <a href="/Item/25924.aspx" target="_blank">奥运之星</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-24]</span>
+                        <a href="/Item/25843.aspx" target="_blank">白菜价！皇马1000万贱卖卡卡 前金球先…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-23]</span>
+                        <a href="/Item/25827.aspx" target="_blank">C罗没有极限！穆帅：下赛季他的数据会…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-20]</span>
+                        <a href="/Item/25819.aspx" target="_blank">劳资教父称纽约放弃书豪绝非明智 林就…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-19]</span>
+                        <a href="/Item/25806.aspx" target="_blank">林书豪：更想为尼克斯效力 我爱死纽约…</a>
+                        </li>
+                    </ul>
+                </DIV>
+                <DIV class=tagContent id=tagContent5>
+                    <ul>
+
+                        <li>
+                        <span class="datetime">[03-01]</span>
+                        <a href="/Item/31935.aspx" target="_blank">李天一案引激辩 警方仍未公布受害人年龄</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[08-06]</span>
+                        <a href="/Item/25962.aspx" target="_blank">男子飞扑克牌速度堪比高铁 1分钟切断16…</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[08-01]</span>
+                        <a href="/Item/25931.aspx" target="_blank">英女王跳伞替身亮相 拥有880次神奇经历</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-25]</span>
+                        <a href="/Item/25865.aspx" target="_blank">北京暴雨众星齐献力 张然化身爱心司机</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-24]</span>
+                        <a href="/Item/25841.aspx" target="_blank">成龙李亚鹏带孩子做慈善 房祖名舍弃跑车</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-23]</span>
+                        <a href="/Item/25826.aspx" target="_blank">77岁倪匡淡定面对作品改编：泼出的水</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-20]</span>
+                        <a href="/Item/25818.aspx" target="_blank">史泰龙儿子生母曝其死因：疑服过量止痛药</a>
+                        </li>
+                        <li>
+                        <span class="datetime">[07-19]</span>
+                        <a href="/Item/25804.aspx" target="_blank">郭书瑶分享好身材秘诀：不要怕胖</a>
+                        </li>
+                    </ul>
+                </DIV>
+            </DIV>
+        </DIV>
+        <SCRIPT type=text/javascript>
+            function selectTag(showContent,selfObj){
+                // 标签
+                var tag = document.getElementById("tags").getElementsByTagName("li");
+                var taglength = tag.length;
+                for(i=0; i<taglength; i++){
+                    tag[i].className = "";
+                }
+                selfObj.parentNode.className = "selectTag";
+                // 标签内容
+                for(i=0; j=document.getElementById("tagContent"+i); i++){
+                    j.style.display = "none";
+                }
+                document.getElementById(showContent).style.display = "block";
+            }
+        </SCRIPT>
+        <!-- 93688新闻标签结束 -->
+
+
+    </body>
+</html>
